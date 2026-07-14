@@ -9,7 +9,3 @@ services:
         sync: false
       - key: PORT
         value: 10000
-    disk:
-      name: marginal-data
-      mountPath: /app/backend/data
-      sizeGB: 5
