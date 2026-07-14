@@ -4,7 +4,7 @@ FROM python:3.12-slim
 # Set environmental variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-ENV PORT=8000
+ENV PORT=10000
 
 # Set working directory
 WORKDIR /app
@@ -23,7 +23,7 @@ COPY backend /app/backend
 COPY frontend /app/frontend
 
 # Expose server port
-EXPOSE 8000
+EXPOSE 10000
 
 # Set working directory to backend for uvicorn execution
 WORKDIR /app/backend
