@@ -37,9 +37,8 @@ def init_db():
     try:
         columns = [col['name'] for col in inspector.get_columns('paper')]
         if 'references' not in columns:
-            with Session(engine) as session:
-                session.exec(text("ALTER TABLE paper ADD COLUMN references TEXT"))
-                session.commit()
+            with engine.begin() as conn:
+                conn.execute(text('ALTER TABLE paper ADD COLUMN "references" TEXT'))
     except Exception as e:
         print(f"Database migration note: {e}")
 
