@@ -15,7 +15,7 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
     client = get_client()
     try:
         response = client.models.embed_content(
-            model='text-embedding-004',
+            model='gemini-embedding-001',
             contents=texts,
         )
         return [embedding.values for embedding in response.embeddings]
