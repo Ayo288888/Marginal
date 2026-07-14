@@ -92,3 +92,18 @@ Once running, navigate to **[http://localhost:8000](http://localhost:8000)** in 
 - **Upload**: Drop a PDF in the sidebar dropzone to catalog it.
 - **Read**: Select any ready paper to load its structured breakdown.
 - **Ask**: Enter grounding questions in the chat sidebar.
+
+---
+
+## Deployment Guide (Render / Fly.io Container)
+
+This repository includes a `Dockerfile` and a `render.yaml` configuration to deploy the complete application (both backend API and frontend assets) in a single container.
+
+### Deploying to Render
+1. Create an account on [Render](https://render.com/).
+2. Click **New +** and select **Blueprint**.
+3. Connect your GitHub repository containing this code.
+4. Render will automatically parse the `render.yaml` file to set up:
+   - A **Docker Web Service** using the `Dockerfile`.
+   - A **Persistent Disk** mounted at `/app/backend/data` (standard plan required) to store the SQLite database and uploaded PDF files.
+5. In the Render Dashboard, input your `GEMINI_API_KEY` under the service's environment variables.
