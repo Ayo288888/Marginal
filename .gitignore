@@ -1,0 +1,7 @@
+backend/venv/
+backend/data/uploads/*
+backend/data/chroma_db/*
+backend/data/papers.db
+backend/.env
+__pycache__/
+*.pyc
