@@ -524,4 +524,29 @@ document.addEventListener('DOMContentLoaded', () => {
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#039;');
     }
+
+    // 10. About Modal Interactions
+    const aboutBtn = document.getElementById('aboutBtn');
+    const aboutModal = document.getElementById('aboutModal');
+    const closeAboutBtn = document.getElementById('closeAboutBtn');
+
+    if (aboutBtn && aboutModal && closeAboutBtn) {
+        aboutBtn.addEventListener('click', () => {
+            aboutModal.style.display = 'flex';
+            aboutModal.offsetHeight; // force reflow
+            aboutModal.classList.add('show');
+        });
+
+        closeAboutBtn.addEventListener('click', () => {
+            aboutModal.classList.remove('show');
+            setTimeout(() => { aboutModal.style.display = 'none'; }, 200);
+        });
+
+        aboutModal.addEventListener('click', (e) => {
+            if (e.target === aboutModal) {
+                aboutModal.classList.remove('show');
+                setTimeout(() => { aboutModal.style.display = 'none'; }, 200);
+            }
+        });
+    }
 });
