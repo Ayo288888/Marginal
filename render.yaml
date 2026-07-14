@@ -2,7 +2,7 @@ services:
   - type: web
     name: marginal-paper-reader
     env: docker
-    dockerfilepath: ./Dockerfile
+    dockerfilePath: ./Dockerfile
     plan: free # Note: Render persistent disks require standard plan or above. Remove 'disk' block if deploying to Free plan without persistent disk.
     envVars:
       - key: GEMINI_API_KEY
